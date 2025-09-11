@@ -17,6 +17,8 @@
       --card-border:#e9eef3;
       --text-dark:#0b1724;
       --error:#dc2626;
+      --warning:#f59e0b;
+      --success:#059669;
     }
     
     *{
@@ -216,13 +218,48 @@
       border:1px solid #fecaca;
     }
     
+    .warning-message{
+      background:#fffbeb;
+      color:#92400e;
+      padding:12px 16px;
+      border-radius:8px;
+      margin:16px 0;
+      border:1px solid #fed7aa;
+    }
+    
     .success-message{
       background:#f0fdf4;
-      color:#166534;
+      color:var(--success);
       padding:12px 16px;
       border-radius:8px;
       margin:16px 0;
       border:1px solid #bbf7d0;
+    }
+    
+    .code-block{
+      background:#f5f5f5;
+      color:#374151;
+      padding:12px 16px;
+      border-radius:6px;
+      font-family:monospace;
+      font-size:14px;
+      margin:12px 0;
+      border:1px solid #d1d5db;
+      word-break:break-all;
+    }
+    
+    .step-number{
+      background:var(--accent);
+      color:white;
+      width:24px;
+      height:24px;
+      border-radius:50%;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:14px;
+      font-weight:600;
+      margin-right:8px;
     }
     
     iframe{
@@ -287,8 +324,9 @@
           <a href="#home">Home</a>
           <a href="#timeline">Timeline</a>
           <a href="#signup">Sign-up</a>
+          <a href="#downloads">App Download</a>
           <a href="#privacy">Data Protection</a>
-          <a href="#downloads">Downloads</a>
+          <a href="#materials">Materials</a>
         </div>
         <a class="button" href="#signup">Sign up</a>
       </nav>
@@ -335,7 +373,8 @@
         <aside class="card">
           <h3>Quick Actions</h3>
           <ul>
-            <li><a href="#signup">Sign up now</a></li>
+            <li><a href="#signup">Sign up for the study</a></li>
+            <li><a href="#downloads">Download MORE app</a></li>
             <li><a href="Participant%20Information%20Sheet.pdf" target="_blank">Download participant info sheet</a></li>
             <li><a href="Informed%20Consent.pdf" target="_blank">Download consent form</a></li>
             <li><a href="#privacy">Read data protection policy</a></li>
@@ -361,6 +400,13 @@
         <h2>Study Timeline</h2>
         <p class="lead">Overview of the 30-day study structure.</p>
         <div class="timeline card">
+          <div class="item">
+            <div class="dot"></div>
+            <div>
+              <strong>Preparations - Download & setup MORE app</strong>
+              <div class="muted">Before October 1, 2025</div>
+            </div>
+          </div>
           <div class="item">
             <div class="dot"></div>
             <div>
@@ -448,6 +494,43 @@
       </div>
     </section>
 
+    <!-- APP DOWNLOAD SECTION -->
+    <section id="downloads">
+      <div class="container">
+        <h2>Download & Setup the MORE App</h2>
+        <p class="lead">Thank you so much for supporting our research project! To get started, please follow the steps below to install and set up the MORE app:</p>
+        
+        <div class="card">
+          <h3><span class="step-number">1</span>Download the MORE App</h3>
+          <p>Choose your device type and download the app:</p>
+          <ul>
+            <li><strong>iOS (Apple):</strong> <a href="https://apps.apple.com/at/app/more-app/id6450769124?l=en-GB" target="_blank" rel="noopener">Download from App Store</a></li>
+            <li><strong>Android:</strong> <a href="https://drive.google.com/file/d/1I9Cb_KPGZ8vgbbwoowLZpzdOylDgNHfV/view?usp=sharing" target="_blank" rel="noopener">Download APK file</a></li>
+          </ul>
+          
+          <div class="warning-message">
+            <strong>Important for Android users:</strong> Please make sure to enable Developer Mode before installing the app. If you don't know how to do this, please have a look at <a href="https://www.android.com/intl/en_uk/articles/enable-android-developer-settings/" target="_blank" rel="noopener">this guide</a>.
+          </div>
+
+          <h3><span class="step-number">2</span>Set the Study Endpoint</h3>
+          <p>After installing the app, please update the Study Endpoint to:</p>
+          <div class="code-block">
+            https://data.more-health.at/api/v1
+          </div>
+          <p class="muted">If you're unsure how to do this, refer to the attached image for guidance.</p>
+
+          <h3><span class="step-number">3</span>Enter Your Registration Code</h3>
+          <p>Each participant will receive a <strong>unique code via email</strong>, which can only be used once.</p>
+
+          <div class="success-message">
+            <strong>You're all set!</strong> After completing these steps, you'll be enrolled in the test study. You'll receive notifications on your phone - on the mentioned days in the study timeline - prompting you to fill out questionnaires.
+          </div>
+          
+          <p class="muted"><strong>Need help?</strong> Contact our research team at <a href="mailto:phintervention@gmail.com">phintervention@gmail.com</a> if you encounter any issues during setup.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- DATA PROTECTION & SECURITY -->
     <section id="privacy">
       <div class="container">
@@ -499,22 +582,26 @@
       </div>
     </section>
 
-    <!-- DOWNLOADS -->
-    <section id="downloads">
+    <!-- STUDY MATERIALS SECTION -->
+    <section id="materials">
       <div class="container">
         <h2>Download Study Materials</h2>
         <p class="lead">PDF versions of study documents for your records.</p>
         
         <div class="card">
-          <p><strong>Note:</strong> These documents will be made available once the study launches. Please bookmark this page and check back, or contact us for the latest versions.</p>
-          
+          <h3>Available Documents</h3>
           <ul>
-            <li><strong>Participant Information Sheet (PDF)</strong> - Comprehensive study details</li>
-            <li><strong>Consent Form (PDF)</strong> - Formal consent documentation</li>
-            <li><strong>Study Flyer (PDF)</strong> - Quick reference and sharing material</li>
+            <li><a href="Participant%20Information%20Sheet.pdf" download="Participant_Information_Sheet.pdf" target="_blank" rel="noopener">
+              <strong>Participant Information Sheet (PDF)</strong></a> - Comprehensive study details and procedures</li>
+            <li><a href="Informed%20Consent.pdf" download="Informed_Consent.pdf" target="_blank" rel="noopener">
+              <strong>Informed Consent Form (PDF)</strong></a> - Formal consent documentation</li>
+            <li><a href="Flyer%20-%20Joing%20our%2030-Day%20Digital%20Health%20Study.pdf" download="Study_Flyer.pdf" target="_blank" rel="noopener">
+              <strong>Study Flyer (PDF)</strong></a> - Quick reference and sharing material</li>
           </ul>
           
-          <p class="muted">Documents will be available for download starting October 1, 2025. For immediate access to study information, please contact <a href="mailto:phintervention@gmail.com">phintervention@gmail.com</a>.</p>
+          <p class="muted"><strong>Tip:</strong> Right-click any link above and select "Save link as..." to download directly to your device. These documents contain the same information as this website in a printable format.</p>
+          
+          <p class="muted">Having trouble accessing the documents? Contact us at <a href="mailto:phintervention@gmail.com">phintervention@gmail.com</a> and we'll send them directly to your email.</p>
         </div>
       </div>
     </section>
