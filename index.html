@@ -262,9 +262,43 @@
       margin-right:8px;
     }
     
-    iframe{
+    .language-toggle{
+      display:inline-flex;
+      background:#f1f5f9;
       border-radius:8px;
-      border:1px solid var(--card-border);
+      padding:4px;
+      margin:16px 0;
+    }
+    
+    .language-toggle button{
+      padding:8px 16px;
+      border:none;
+      background:transparent;
+      border-radius:6px;
+      cursor:pointer;
+      font-family:inherit;
+      font-size:14px;
+      font-weight:500;
+      color:var(--muted);
+      transition:all 0.2s ease;
+    }
+    
+    .language-toggle button.active{
+      background:white;
+      color:var(--accent);
+      box-shadow:0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .language-toggle button:hover:not(.active){
+      color:var(--text-dark);
+    }
+    
+    .language-content{
+      display:none;
+    }
+    
+    .language-content.active{
+      display:block;
     }
     
     /* Mobile responsiveness */
@@ -777,6 +811,19 @@
   </main>
 
   <script>
+    // Language toggle functionality
+    function toggleLanguage(lang) {
+      // Hide all content
+      document.getElementById('en-content').classList.remove('active');
+      document.getElementById('de-content').classList.remove('active');
+      document.getElementById('en-btn').classList.remove('active');
+      document.getElementById('de-btn').classList.remove('active');
+      
+      // Show selected content
+      document.getElementById(lang + '-content').classList.add('active');
+      document.getElementById(lang + '-btn').classList.add('active');
+    }
+    
     // Update copyright year
     document.getElementById('year').textContent = new Date().getFullYear();
     
